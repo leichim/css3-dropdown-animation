@@ -1,0 +1,83 @@
+/* Basic Styling Rules for the navigation menu, including resetting */
+
+/* Link color and fonts */
+.main-navigation a {
+    color: #fff;
+    display: block;
+    font-family: Arial, sans-serif; 
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* Reset the ul styles */
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling of each menu item, allows the absolute positioning of the li's ul children.  */
+.main-navigation li {
+    background: #6e9ef8;
+    float: left;
+    position: relative; 
+}
+
+/* The dropdown menu most important features, making it invisible at default. */
+ul.dropdown-menu {
+    background: #fff;
+    color: #000;
+    display: none;      
+    font-size: 13px;
+    left: 0;
+    position: absolute; 
+    width: 100%;
+}
+
+/** 
+ * The Styling of dropdown menu-items 
+ */
+ul.dropdown-menu li {
+    display: block;
+    float: none;
+}
+
+/**
+ * Targets all ul that are a direct child of any ul li:hover in the .main-navigation container,
+ * Also the animation properties!
+ * The animation is called opacity, takes 700ms,
+ * easing is ease-in-out, no delay, it will run one time in normal direction
+ */
+.main-navigation ul li:hover > ul.dropdown-menu {
+   display: block; /* Dropdown will be visible after hover. */
+   opacity: 1; /* This keeps the opacity at 1 after the animation has run (e.g. could be considered as the final or default stage of the element) */
+   animation: opacity 700ms ease-in-out normal;
+   -moz-animation: opacity 700ms ease-in-out normal;
+   -ms-animation: opacity 700ms ease-in-out normal;
+   -o-animation: opacity 700ms ease-in-out normal;
+   -webkit-animation: opacity 700ms ease-in-out normal;    
+}
+
+/**
+ * Defines how the animation will look like
+ */
+@keyframes opacity { 
+    from { opacity:0; } 
+    to { opacity: 1; } 
+}
+@-moz-keyframes opacity { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+@-ms-keyframes opacity { 
+    from {opacity:0; } 
+    to { opacity: 1; } 
+}
+@-o-keyframes opacity { 
+    from {opacity:0; } 
+    to { opacity: 1; } 
+}
+@-webkit-keyframes opacity { 
+    from { opacity:0; } 
+    to { opacity: 1; } 
+}
